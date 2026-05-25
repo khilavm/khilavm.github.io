@@ -1,7 +1,7 @@
 ---
 layout: post
 title: More on bit-reversal
-date: 2026-03-01 00:00:00-0600
+date: 2026-05-01 00:00:00-0600
 description: Exploring cycles, their distribution, and generating patterns in bit-reversal permutations.
 tags: math fft
 categories: notes
@@ -31,7 +31,7 @@ $$
 \end{align*}
 $$
 
-where the subscript denotes the base of the set. This will be omitted further below where the distinction is obvious. Now denote by $$R_N$$ the action of bit-reversal applied to $$S(N)$$, i.e., $$R_N=$$`Rev`$$(S(N))$$.
+where the subscript denotes the base of the set. This will be omitted further below where the distinction is obvious. Now denote by $$R_N$$ the action of bit-reversal applied to $$S(N)$$, i.e., $$R_N=$$`Rev`$$(S(N))$$. A key property of bit-reversal is that it is an *involution*: reversing twice returns the original number, so $$\texttt{Rev}(\texttt{Rev}(x))=x$$ for all $$x \in S(N)$$. This means every element either maps to itself (a fixed point) or belongs to a pair $$\{x,\texttt{Rev}(x)\}$$ that swaps under reversal. Much of the structure that we discuss in this document follows from this fact.
 
 $$
 \begin{align*}
@@ -98,7 +98,7 @@ How many cycles are present in $$R_N$$? By counting up to $$N=8$$, we get the fo
 | 3 | 4 | 7 | 16 |
 | 4 | 4 | 8 | 16 |
 
-Let us denote the number of cycles in $$R_N$$, or the number of elements in $$C_N$$, as $$\mathcal{N}_N$$. We may conjecture that if $$N$$ is even, then $$\mathcal{N}_N=2^{N/2}$$, and if $$N$$ is odd, then $$\mathcal{N}_N=2^{(N+1)/2}$$. This can easily be verified by looking at binary numbers in $$5$$ and $$6$$ bits. Take $$00100$$. Finding a cycle under bit-reversal is equivalent to fixing the middle element — the 1 here — and folding one side onto the other. The elements to the left of the middle one can be chosen in $$2^{(N-1)/2}$$ ways, and the middle element can be either $$0$$ or $$1$$. So, multiplying by two gives $$\mathcal{N}_{N\text{ odd}}=2^{(N+1)/2}$$. For the even $$N$$ case, consider $$001100$$. Here it is merely a question of folding straight down the middle, so we only need to choose our bits on one side, giving $$\mathcal{N}_{N\text{ even}}=2^{N/2}$$. Combining both odd and even cases, we can write the number of cycles for $$N$$ bits as $$\mathcal{N}_N=2^{\lceil N/2 \rceil}$$.
+Let us denote the number of cycles in $$R_N$$, or the number of elements in $$C_N$$, as $$\mathcal{N}_N$$. We may conjecture that if $$N$$ is even, then $$\mathcal{N}_N=2^{N/2}$$, and if $$N$$ is odd, then $$\mathcal{N}_N=2^{(N+1)/2}$$. This can easily be verified by looking at binary numbers in $$5$$ and $$6$$ bits. Take $$00100$$. Finding a cycle under bit-reversal is equivalent to fixing the middle element — the 1 here — and folding one side onto the other. The elements to the left of the middle one can be chosen in $$2^{(N-1)/2}$$ ways, and the middle element can be either $$0$$ or $$1$$. So, multiplying by two gives $$\mathcal{N}_{N\text{ odd}}=2^{(N+1)/2}$$. For the even $$N$$ case, consider $$001100$$. Here it is merely a question of folding straight down the middle, so we only need to choose our bits on one side, giving $$\mathcal{N}_{N\text{ even}}=2^{N/2}$$. Combining both odd and even cases, we can write the number of cycles for $$N$$ bits as $$\mathcal{N}_N=2^{\lceil N/2 \rceil}$$. This sequence $$\{2,2,4,4,8,8,16,16,\dots\}$$ appears in the On-Line Encyclopedia of Integer Sequences (OEIS) as [A060546](https://oeis.org/A060546). A consequence of the involution property is that the remaining $$2^N - \mathcal{N}_N$$ elements pair off into 2-cycles, so the total number of 2-cycles is $$(2^N - 2^{\lceil N/2 \rceil})/2$$.
 
 ## Distribution
 
@@ -339,4 +339,35 @@ Interchange $$y$$ and $$x$$ for the equation for the sheath on the right. Thus f
   <img src="/assets/img/posts/bit-reversal/bitrev_sheath.png" alt="Bit-reversal sheath pattern for N=8">
 </div>
 
-{% bibliography --cited %}
+## A diversion into primes
+
+Any discussion involving natural numbers is inevitably bound to include primes. The table below gives the number of $$N$$-bit primes, i.e., the number of primes present in binary numbers of $$N$$ bits. For example, with $$N=4$$ we have the range in decimal as $$[8,16)$$ with the primes being $$11_{10}=1011_2$$ and $$13_{10}=1101_2$$ which reverse to each other. For $$N=5$$ the range is $$[16,32)$$ and the set of primes is $$\{17,19,23,29,31\}$$, which reverses to $$\{17,25,29,23,31\}$$, giving us 4 reversals to prime numbers and 2 cyclic primes. All the sequences in the table may be described as follows and are given in the OEIS.
+
+1. **Total Primes**: Number of $$N$$-bit primes — [A374403](https://oeis.org/A374403)
+2. **Rev to Prime**: Number of $$N$$-bit primes that reverse to primes — [A366910](https://oeis.org/A366910)
+3. **Cyclic Primes**: Number of $$N$$-bit primes that reverse to themselves — [A117773](https://oeis.org/A117773)
+
+We immediately observe a periodic occurrence of zeroes in the sequence of cyclic primes. Barring $$N=2$$, there are no cyclic primes for even $$N$$.
+
+| **N** | **Total Primes** | **Rev to Prime** | **Cyclic Primes** |
+|:---:|:---:|:---:|:---:|
+| 1 | 0 | 0 | 0 |
+| 2 | 2 | 1 | 1 |
+| 3 | 2 | 2 | 2 |
+| 4 | 2 | 2 | 0 |
+| 5 | 5 | 4 | 2 |
+| 6 | 7 | 6 | 0 |
+| 7 | 13 | 9 | 3 |
+| 8 | 23 | 14 | 0 |
+| 9 | 43 | 27 | 3 |
+| 10 | 75 | 36 | 0 |
+| 11 | 137 | 69 | 7 |
+| 12 | 255 | 94 | 0 |
+| 13 | 464 | 178 | 12 |
+| 14 | 872 | 308 | 0 |
+| 15 | 1612 | 589 | 23 |
+| 16 | 3030 | 908 | 0 |
+| 17 | 5709 | 1540 | 40 |
+| 18 | 10749 | 2814 | 0 |
+| 19 | 20390 | 5158 | 94 |
+| 20 | 38635 | 9210 | 0 |

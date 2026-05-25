@@ -34,6 +34,15 @@ cv:
           - Magnetohydrodynamic simulations in the Earth's magnetosphere.
           - Advisor - Robert Lysak
 
+      - institution: Tata Institute of Fundamental Research
+        location: Mumbai, MH, India
+        area: Physics, Mathematics
+        studyType: Master's thesis project
+        start_date: 2019
+        end_date: 2020
+        highlights:
+          - Advisor - Shiraz Minwalla
+
       - institution: Indian Institute of Science Education and Research, Pune, India
         location: Pune, MH, India
         area: Physics, Mathematics
@@ -54,6 +63,18 @@ cv:
            - Calculating hot plasma susceptibilities for a subgrid dispersion relation solver for use in the MASS-APP plasma simulation code.
            - Mentor - Salomon Janhunen (Group T-5)
     
+       - company: University of Minnesota - Twin Cities
+         position: Graduate Research Assistant
+         location: Minneapolis, MN, USA
+         start_date: 2020
+         end_date: 2025
+         
+       - company: University of Minnesota - Twin Cities
+         position: Teaching Assistant
+         location: Minneapolis, MN, USA
+         start_date: 2019
+         end_date: 2020
+         
     #Volunteer:
     #   - company: People's Climate March
     #     position: Lead Organizer
@@ -83,7 +104,7 @@ cv:
            - Robert Lysak
            - Kazue Takahashi
          releaseDate: 2026
-         url: https://doi.org/10.22541/essoar.15001975/v1
+         url: https://doi.org/10.22541/essoar.15001975/v2
          summary: "In review at Journal of Geophysical Research: Space Physics"
 
        - title: Relationship between low-latitude Pi2 pulsations and cavity mode oscillations.
@@ -95,11 +116,15 @@ cv:
          releaseDate: 2024
          url: https://agupubs.onlinelibrary.wiley.com/doi/full/10.1029/2024JA032858
 
-    #Skills:
-      # - name: Physics
-      #   level: Master
-      #   icon: fa-solid fa-hashtag
-      #   keywords: "Quantum Mechanics, Quantum Computing, Quantum Information, Quantum Cryptography, Quantum Communication, Quantum Teleportation"
+    Skills:
+      - name: Computing
+        keywords:
+          - Python
+          - Fortran
+          - JAX
+          - PyTorch
+          - Numerical analysis
+          - High Performance Computing
 
     Languages:
       - name: English

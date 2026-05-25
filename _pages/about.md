@@ -23,7 +23,9 @@ latest_posts:
   limit: 3 # leave blank to include all the blog posts
 ---
 
-I am a researcher at the University of Minnesota, Twin Cities. My current work focusses on magnetohydrodynamics, numerical analysis and fluvial turbulence.
+I am a researcher at the University of Minnesota, Twin Cities. My current work focusses on magnetohydrodynamics, numerical analysis and fluvial turbulence. I completed my PhD with Robert Lysak at the same institute in 2025, working on numerical simulations of MHD waves in the Earth's magnetosphere. 
+
+I am open to all sorts of collaboration.
 
 ---
 

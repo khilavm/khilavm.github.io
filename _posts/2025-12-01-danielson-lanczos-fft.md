@@ -9,7 +9,7 @@ related_posts: false
 author: Khilav Majmudar
 ---
 
-This note summarizes my understanding of the Danielson-Lanczos method of calculating the Fast Fourier Transform of an array of numbers. I read it in Numerical Recipes {% cite press1989numerical %}. The method explained there becomes clear, as in most such cases, by expanding out the expressions for small values. The Danielson-Lanczos method is the prototype example of the general class of FFT algorithms.
+This note summarizes my understanding of the Danielson-Lanczos method of calculating the Fast Fourier Transform of an array of numbers. I read it in Numerical Recipes[^1]. The method explained there becomes clear, as in most such cases, by expanding out the expressions for small values. The Danielson-Lanczos method is the prototype example of the general class of FFT algorithms.
 
 We have a discrete Fourier transform of length $$N$$.
 
@@ -89,7 +89,7 @@ Take the $$eeoeoeo\ldots oo$$ pattern, reverse it and assign 1 to $$o$$ and 0 to
 
 To understand the above, take the original indices of $$f$$ for $$N=4$$ --- $$\{0,1,2,3\}$$ --- in binary, i.e., $$\{00,01,10,11\}$$. We can see that $$f_0$$ and $$f_3$$ bit-reverse to themselves, and $$f_1$$ and $$f_2$$ map to each other. Thus the bit-reversed array is $$\{0,2,1,3\}$$. For $$N=8$$, we have the indices of $$f$$ in binary as $$\{000,001,010,011,100,101,110,111\}$$. Here, $$f_0$$, $$f_2$$, $$f_5$$ and $$f_7$$ map to themselves, and $$f_1 \leftrightarrow f_4$$, $$f_3 \leftrightarrow f_6$$. This leads to the bit-reversed array given in the previous paragraph.
 
-Suppose we wanted to construct the bit-reversed index array for $$N=16$$. We would have to write the binary representation of every index, reverse it and then get the resulting array. This process quickly becomes cumbersome. But there is an easier way, inspired by the pseudocode presented in {% cite johnson2026implementing %}. Consider the bit-reversed arrays for $$N \in \{2,4,8\}$$.
+Suppose we wanted to construct the bit-reversed index array for $$N=16$$. We would have to write the binary representation of every index, reverse it and then get the resulting array. This process quickly becomes cumbersome. But there is an easier way, inspired by the pseudocode presented in Johnson & Frigo[^2]. Consider the bit-reversed arrays for $$N \in \{2,4,8\}$$.
 
 $$
 \begin{align*}
@@ -112,4 +112,5 @@ $$
 
 This halving algorithm achieves a significant reduction in computational time complexity. Evaluating the DFT directly using equation \eqref{main} requires $$N^2$$ complex multiplications, which is represented by a complexity of $$\mathcal{O}(N^2)$$. As $$N$$ becomes large — which is typical in audio processing, image analysis, and scientific computing — this quadratic growth becomes computationally prohibitive. In the Danielson-Lanczos method, we have $$\log_2(N)$$ halvings of the data array and $$N$$ operations to combine the subtransforms at each stage, giving us an $$\mathcal{O}(N \log_2 N)$$ process. To illustrate the impact of this difference, for a dataset of one million points ($$N=10^6$$), the direct $$\mathcal{O}(N^2)$$ approach requires a trillion operations, whereas the FFT requires only about 20 million --- a speedup by a factor of fifty thousand.
 
-{% bibliography --cited %}
+[^1]: W. H. Press, *Numerical Recipes in Pascal: The Art of Scientific Computing*, Cambridge University Press, 1989.
+[^2]: S. G. Johnson and M. Frigo, "Implementing FFTs in practice," arXiv:2602.23525, 2026.
