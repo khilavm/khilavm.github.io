@@ -16,6 +16,13 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/notebook/index.html";
           },
+        },{id: "nav-projects",
+          title: "Projects",
+          description: "",
+          section: "Navigation",
+          handler: () => {
+            window.location.href = "/projects/";
+          },
         },{id: "nav-cv",
           title: "CV",
           description: "",
@@ -39,6 +46,11 @@ ninja.data = [{
           description: "A convolutional neural network for classifying ECG signals.",
           section: "Projects",handler: () => {
               window.location.href = "/projects/ecg_cnn/";
+            },},{id: "projects-taylor-green-vortex",
+          title: 'Taylor-Green Vortex',
+          description: "Simulation of the Taylor-Green vortex using JAX.",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/taylor_green_vortex/";
             },},{id: "teachings-data-science-fundamentals",
           title: 'Data Science Fundamentals',
           description: "This course covers the foundational aspects of data science, including data collection, cleaning, analysis, and visualization. Students will learn practical skills for working with real-world datasets.",
