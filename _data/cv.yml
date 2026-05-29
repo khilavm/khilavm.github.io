@@ -30,9 +30,6 @@ cv:
         studyType: PhD
         start_date: 2019
         end_date: 2025
-        highlights:
-          - Magnetohydrodynamic simulations in the Earth's magnetosphere.
-          - Advisor - Robert Lysak
 
       - institution: Tata Institute of Fundamental Research
         location: Mumbai, MH, India
@@ -46,7 +43,7 @@ cv:
       - institution: Indian Institute of Science Education and Research, Pune, India
         location: Pune, MH, India
         area: Physics, Mathematics
-        studyType: BS - MS Dual degree
+        studyType: BS - MS dual degree
         start_date: 2013
         end_date: 2018
         # highlights:
@@ -54,6 +51,23 @@ cv:
         #   - Description 2.
 
     Experience:
+       - company: Saint Anthony Falls Laboratory
+         position: Researcher
+         location: Minneapolis, MN, USA
+         start_date: 2025
+         end_date: Present
+         highlights:
+           - Budgeting of fluvial turbulence energy into erosion and sediment transport.
+
+       - company: University of Minnesota - Twin Cities
+         position: Graduate Research Assistant
+         location: Minneapolis, MN, USA
+         start_date: 2020
+         end_date: 2025
+         highlights:
+           - Magnetohydrodynamic simulations of plasma waves in the Earth's magnetosphere.
+           - Advisor - Robert Lysak
+
        - company: Los Alamos National Laboratory 
          position: Summer Research Intern
          location: Los Alamos, NM, USA
@@ -62,12 +76,6 @@ cv:
          highlights:
            - Calculating hot plasma susceptibilities for a subgrid dispersion relation solver for use in the MASS-APP plasma simulation code.
            - Mentor - Salomon Janhunen (Group T-5)
-    
-       - company: University of Minnesota - Twin Cities
-         position: Graduate Research Assistant
-         location: Minneapolis, MN, USA
-         start_date: 2020
-         end_date: 2025
          
        - company: University of Minnesota - Twin Cities
          position: Teaching Assistant
