@@ -1,0 +1,10 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(ruby --version)",
+      "Bash(jekyll --version)",
+      "Bash(gh repo *)",
+      "Bash(gh api *)"
+    ]
+  }
+}
