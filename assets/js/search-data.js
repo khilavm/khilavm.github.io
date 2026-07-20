@@ -48,7 +48,7 @@ ninja.data = [{
               window.location.href = "/projects/ecg_cnn/";
             },},{id: "projects-taylor-green-vortex",
           title: 'Taylor-Green Vortex',
-          description: "Simulation of the Taylor-Green vortex using JAX.",
+          description: "Simulations of the Taylor-Green vortex on GPUs.",
           section: "Projects",handler: () => {
               window.location.href = "/projects/taylor_green_vortex/";
             },},{id: "teachings-data-science-fundamentals",
