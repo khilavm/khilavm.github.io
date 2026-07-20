@@ -2,7 +2,7 @@
 layout: page
 title: ECG CNN
 description: A convolutional neural network for classifying ECG signals.
-importance: 1
+importance: 2
 category: work
 github: https://github.com/khilavm/ecg_cnn
 ---
