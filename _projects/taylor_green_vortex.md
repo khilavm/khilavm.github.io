@@ -97,8 +97,14 @@ Simulations of the Taylor-Green vortex, a canonical benchmark problem in fluid d
     border-color: var(--global-theme-color);
   }
   /* The notebook renders inside a same-origin iframe, so its internals cannot be
-     styled from here. Only the frame itself is ours. */
+     styled from here. Only the frame itself is ours.
+
+     color-scheme propagates into iframes, so the site's dark theme makes the
+     browser paint the framed canvas dark while nbconvert's CSS keeps setting
+     dark body text for a white page, leaving the prose invisible. nbconvert
+     emits no dark-mode styles at all, so opt the frame back into light. */
   .jupyter-notebook-iframe-container iframe {
+    color-scheme: light;
     background: #fff;
     border-radius: 6px;
   }
