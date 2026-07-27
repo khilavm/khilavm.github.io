@@ -250,9 +250,9 @@ $\varepsilon = 1.286\times10^{-2}$ at $t = 9.0$ — within ~2% of the reference 
 
 Starting from the dimensional incompressible Navier-Stokes equations:
 
-$$\frac{\partial \mathbf{u}^*}{\partial t^*} + (\mathbf{u}^* \cdot \nabla)\mathbf{u}^* = -\frac{1}{\rho}\nabla p^* + \nu_1 \nabla^2 \mathbf{u}^*$$
+$$\frac{\partial \mathbf{u}^\ast }{\partial t^\ast } + (\mathbf{u}^\ast  \cdot \nabla)\mathbf{u}^\ast  = -\frac{1}{\rho}\nabla p^\ast  + \nu_1 \nabla^2 \mathbf{u}^\ast $$
 
-Here, $\mathbf{u}$ is the velocity and $p$ the pressure. The viscosity is defined here as $\nu_1$ as we will use $\nu$ for the final nondimensional form later. We introduce a characteristic velocity $U$ and length scale $L$ and define nondimensional variables $\mathbf{u} = \mathbf{u}^*/U$, $t = t^* U/L$, $p = p^*/\rho U^2$. The equations become:
+Here, $\mathbf{u}$ is the velocity and $p$ the pressure. The viscosity is defined here as $\nu_1$ as we will use $\nu$ for the final nondimensional form later. We introduce a characteristic velocity $U$ and length scale $L$ and define nondimensional variables $\mathbf{u} = \mathbf{u}^\ast/U$, $t = t^\ast  U/L$, $p = p^\ast/\rho U^2$. The equations become:
 
 $$\frac{\partial \mathbf{u}}{\partial t} + (\mathbf{u} \cdot \nabla)\mathbf{u} = -\nabla p + \frac{1}{Re} \nabla^2 \mathbf{u}, \qquad Re = \frac{UL}{\nu_1}$$
 
